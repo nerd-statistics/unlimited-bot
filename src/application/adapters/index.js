@@ -1,6 +1,6 @@
-const { parseContent, toEveryone } = require("./commands")
+const { commandsHandler, toEveryone } = require("./commands")
 
 module.exports = {
-    parseContent,
+    commandsHandler,
     toEveryone,
 }

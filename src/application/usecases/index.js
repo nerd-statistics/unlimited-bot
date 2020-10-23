@@ -1,4 +1,4 @@
-const { formatBossName, buildBossObject } = require("./boss")
+const { formatBossName, buildBossObject, alertBoss } = require("./boss")
 const { scheduleAttack, buildRollObject } = require("./roll")
 
 module.exports = {

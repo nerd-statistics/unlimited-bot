@@ -1,16 +1,16 @@
-const { buildBossObject, buildRollObject } = require("../services")
+const { buildBossObject, buildRollObject, alertBoss } = require("../usecases")
 
 const bossHandler = bossObject => { }
 const rollHandler = () => { }
 
-const parseContent = content => {
+const commandsHandler = content => {
     const contentList = content.split(" ")
 
     try {
         switch (contentList[0]) {
             case "+boss":
-                let contentObj = buildBossObject(contentList)
-                return toEveryone(`Pessoal, nasceu **${contentObj.boss}** no **${contentObj.server}**, vamos atacar mais tarde, fiquem ligados!`)
+                let messageReply = alertBoss(contentList)
+                return toEveryone(messageReply)
             case "+roll":
                 let roll = buildRollObject(contentList)
                 return `O vencedor foi o número **${roll.winner}**, parabéns, você ganhou: **${roll.item}**!`
@@ -35,6 +35,6 @@ const toEveryone = content => {
 }
 
 module.exports = {
-    parseContent,
+    commandsHandler,
     toEveryone,
 }
