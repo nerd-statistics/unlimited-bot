@@ -12,15 +12,18 @@ const buildRollObject = contentList => {
 
 const formatItemName = itemList => capitalize(itemList.join(" "))
 
-const capitalize = string => {
-    return string
-        .split(" ")
-        .map(s => s[0].toUpperCase() + s.slice(1))
-        .join(" ")
-}
+const capitalize = string => string
+    .split(" ")
+    .map(s => s[0].toUpperCase() + s.slice(1))
+    .join(" ")
 
-const giveaway = (amount) => {
-    const winner = randomIntInclusive(1, amount)
+const giveaway = content => {
+    const contentList = content.split(" ")
+    const rollObject = buildRollObject(contentList)
+
+    const winner = randomIntInclusive(1, rollObject.amount)
+
+    return `Parabéns número **${winner}**, você ganhou um **${rollObject.item}**`
 }
 
 const randomIntInclusive = (min = 1, max) => {
@@ -34,4 +37,6 @@ const randomIntInclusive = (min = 1, max) => {
 module.exports = {
     scheduleAttack,
     buildRollObject,
+    randomIntInclusive,
+    giveaway,
 }

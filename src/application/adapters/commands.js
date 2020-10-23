@@ -1,4 +1,4 @@
-const { buildBossObject, buildRollObject, alertBoss } = require("../usecases")
+const { alertBoss, giveaway } = require("../usecases")
 
 const bossHandler = bossObject => { }
 const rollHandler = () => { }
@@ -9,11 +9,11 @@ const commandsHandler = content => {
     try {
         switch (contentList[0]) {
             case "+boss":
-                let messageReply = alertBoss(contentList)
+                let bossMessageReply = alertBoss(contentList)
                 return toEveryone(messageReply)
             case "+roll":
-                let roll = buildRollObject(contentList)
-                return `O vencedor foi o número **${roll.winner}**, parabéns, você ganhou: **${roll.item}**!`
+                let rollMessageReply = giveaway(contentList)
+                return rollMessageReply
             default:
                 return `Foi mal lek, os comandos disponíveis até o momento são: **+boss** e **+roll**`
         }
