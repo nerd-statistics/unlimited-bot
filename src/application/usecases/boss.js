@@ -15,23 +15,22 @@ const buildBossObject = contentList => {
     }
 }
 
-const buildContentOutput = content => {
+const capitalize = string => string
+    .split(" ")
+    .map(s => s[0].toUpperCase() + s.slice(1))
+    .join(" ")
+
+const alertBoss = content => {
     const contentList = content.split(" ")
     const contentObj = buildBossObject(contentList)
 
-    return `Pessoal, nasceu **${contentObj.boss}** no **${contentobj.server}**, vamos atacar mais tarde, fiquem ligados!`
+    return `Pessoal, nasceu **${contentObj.boss}** no **${contentObj.server}**, vamos atacar mais tarde, fiquem ligados!`
 }
 
-const capitalize = string => {
-    return string
-        .split(" ")
-        .map(s => s[0].toUpperCase() + s.slice(1))
-        .join(" ")
-}
 
 module.exports = {
     formatBossName,
     buildBossObject,
-    buildContentOutput,
+    alertBoss,
     capitalize,
 }

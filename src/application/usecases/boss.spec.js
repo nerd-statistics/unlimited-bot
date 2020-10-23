@@ -1,4 +1,4 @@
-const { formatBossName, buildBossObject, capitalize } = require("./boss")
+const { formatBossName, buildBossObject, capitalize, alertBoss } = require("./boss")
 
 test("should be format boss name correctly", () => {
     const gromarak = formatBossName("groma")
@@ -17,14 +17,10 @@ test("should be built boss object", () => {
     })
 })
 
-xtest("should parse boss correctly", () => {
-    // "+boss <boss-name> <server-name>"
-    const bossParsed = parseContent("+boss ank sa4")
-    expect(bossParsed).toStrictEqual({
-        boss: "Ankrahmur",
-        server: "SA4",
-        command: "+boss"
-    })
+test("should be alerted of boss ", () => {
+    const messageReply = alertBoss("+boss ank sa4")
+    const expected = "Pessoal, nasceu **Ankrahmur** no **SA4**, vamos atacar mais tarde, fiquem ligados!"
+    expect(messageReply).toBe(expected)
 })
 
 test("should capitalize the string", () => {
