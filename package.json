@@ -4,6 +4,7 @@
     "description": "The Unlimited Bot",
     "main": "index.js",
     "scripts": {
+        "start": "node src/index.js",
         "test": "jest"
     },
     "repository": {
@@ -19,6 +20,7 @@
     "homepage": "https://github.com/vitorscassiano/unlimited_bot#readme",
     "dependencies": {
         "discord.js": "^12.4.0",
+        "dotenv": "^8.2.0",
         "moment": "^2.29.1"
     },
     "devDependencies": {

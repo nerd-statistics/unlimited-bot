@@ -7,7 +7,7 @@ const parseContent = content => {
         switch(contentList[0]) {
             case "+boss":
                 let boss = buildBossObject(contentList)
-                return boss
+                return `Pessoal, nasceu ${contentObj.boss} no ${contentobj.server}, vamos atacar mais tarde, fiquem ligados!`
                 break;
             case "+roll":
                 let roll = buildRollObject(contentList)
@@ -22,6 +22,11 @@ const parseContent = content => {
     }
 }
 
+const toEveryone = content => {
+    return `@everyone ${content}`
+}
+
 module.exports = {
     parseContent,
+    toEveryone,
 }

@@ -15,7 +15,15 @@ const buildBossObject = contentList => {
     }
 }
 
+const buildContentOutput = content => {
+    const contentList = content.split(" ")
+    const contentObj = buildBossObject(contentList)
+
+    return `Pessoal, nasceu ${contentObj.boss} no ${contentobj.server}, vamos atacar mais tarde, fiquem ligados!`
+}
+
 module.exports = {
     formatBossName,
     buildBossObject,
+    buildContentOutput,
 }
