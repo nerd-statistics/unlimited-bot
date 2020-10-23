@@ -10,7 +10,7 @@ const parseContent = content => {
         switch (contentList[0]) {
             case "+boss":
                 let contentObj = buildBossObject(contentList)
-                return toEveryone(`Pessoal, nasceu **${contentObj.boss}** no **${contentObj.server}**, vamos atacar mais tarde, fiquem ligados!`)
+                return toEveryone(`Pessoals, nasceu **${contentObj.boss}** no **${contentObj.server}**, vamos atacar mais tarde, fiquem ligados!`)
             case "+roll":
                 let roll = buildRollObject(contentList)
                 return `O vencedor foi o número **${roll.winner}**, parabéns, você ganhou: **${roll.item}**!`
