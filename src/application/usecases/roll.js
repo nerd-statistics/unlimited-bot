@@ -17,10 +17,8 @@ const capitalize = string => string
     .map(s => s[0].toUpperCase() + s.slice(1))
     .join(" ")
 
-const giveaway = content => {
-    const contentList = content.split(" ")
+const giveaway = contentList => {
     const rollObject = buildRollObject(contentList)
-
     const winner = randomIntInclusive(1, rollObject.amount)
 
     return `Parabéns número **${winner}**, você ganhou um **${rollObject.item}**`

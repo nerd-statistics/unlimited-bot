@@ -1,8 +1,5 @@
 const { alertBoss, giveaway } = require("../usecases")
 
-const bossHandler = bossObject => { }
-const rollHandler = () => { }
-
 const commandsHandler = content => {
     const contentList = content.split(" ")
 
@@ -10,7 +7,7 @@ const commandsHandler = content => {
         switch (contentList[0]) {
             case "+boss":
                 let bossMessageReply = alertBoss(contentList)
-                return toEveryone(messageReply)
+                return toEveryone(bossMessageReply)
             case "+roll":
                 let rollMessageReply = giveaway(contentList)
                 return rollMessageReply

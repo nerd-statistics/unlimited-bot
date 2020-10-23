@@ -6,4 +6,6 @@ module.exports = {
     scheduleAttack,
     buildBossObject,
     buildRollObject,
+    alertBoss,
+    giveaway,
 }

@@ -20,10 +20,8 @@ const capitalize = string => string
     .map(s => s[0].toUpperCase() + s.slice(1))
     .join(" ")
 
-const alertBoss = content => {
-    const contentList = content.split(" ")
+const alertBoss = contentList => {
     const contentObj = buildBossObject(contentList)
-
     return `Pessoal, nasceu **${contentObj.boss}** no **${contentObj.server}**, vamos atacar mais tarde, fiquem ligados!`
 }
 
