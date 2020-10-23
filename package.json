@@ -1,0 +1,27 @@
+{
+    "name": "unlimited_bot",
+    "version": "1.0.0",
+    "description": "The Unlimited Bot",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vitorscassiano/unlimited_bot.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/vitorscassiano/unlimited_bot/issues"
+    },
+    "homepage": "https://github.com/vitorscassiano/unlimited_bot#readme",
+    "dependencies": {
+        "discord.js": "^12.4.0",
+        "moment": "^2.29.1"
+    },
+    "devDependencies": {
+        "jest": "^26.6.1"
+    }
+}
