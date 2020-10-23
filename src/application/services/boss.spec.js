@@ -1,4 +1,4 @@
-const { formatBossName, buildBossObject } = require("./boss")
+const { formatBossName, buildBossObject, capitalize } = require("./boss")
 
 test("should be format boss name correctly", () => {
     const gromarak = formatBossName("groma")
@@ -25,4 +25,12 @@ xtest("should parse boss correctly", () => {
         server: "SA4",
         command: "+boss"
     })
+})
+
+test("should capitalize the string", () => {
+    const demo = capitalize("demonstration")
+    expect(demo).toBe("Demonstration")
+
+    const goodNews = capitalize("some good news")
+    expect(goodNews).toBe("Some Good News")
 })

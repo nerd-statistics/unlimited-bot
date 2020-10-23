@@ -10,7 +10,7 @@ const buildBossObject = contentList => {
 
     return {
         command: command,
-        boss: bossName,
+        boss: capitalize(bossName),
         server: serverName.toUpperCase(),
     }
 }
@@ -19,11 +19,19 @@ const buildContentOutput = content => {
     const contentList = content.split(" ")
     const contentObj = buildBossObject(contentList)
 
-    return `Pessoal, nasceu ${contentObj.boss} no ${contentobj.server}, vamos atacar mais tarde, fiquem ligados!`
+    return `Pessoal, nasceu **${contentObj.boss}** no **${contentobj.server}**, vamos atacar mais tarde, fiquem ligados!`
+}
+
+const capitalize = string => {
+    return string
+        .split(" ")
+        .map(s => s[0].toUpperCase() + s.slice(1))
+        .join(" ")
 }
 
 module.exports = {
     formatBossName,
     buildBossObject,
     buildContentOutput,
+    capitalize,
 }

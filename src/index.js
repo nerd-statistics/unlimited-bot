@@ -7,9 +7,9 @@ const { parseContent, toEveryone } = require("./application/adapters")
 const DISCORD_TOKEN = process.env.DISCORD_TOKEN
 
 function getRandomIntInclusive(min = 1, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 client.on("ready", () => {
@@ -17,21 +17,9 @@ client.on("ready", () => {
 });
 
 client.on("message", msg => {
-
-    // "+boss <boss-name> <server-name>"
-    // if (msg.content.startsWith("+boss") || mmsg.content.startsWith("")) {
     if (msg.content.startsWith("+")) {
         const message = parseContent(msg.content)
         msg.channel.send(message)
-
-
-        /*
-        msg.channel.send(`
-            @everyone,
-            nasceu ${bossName} no ${serverName}, vamos partir às <+1 hora>.
-            Estejam na call. :punch:
-        `)
-        */
     }
 });
 
