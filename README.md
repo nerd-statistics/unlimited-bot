@@ -1,4 +1,7 @@
-# unlimited_bot
+# Unlimited Bot
+[![Build Status](https://travis-ci.com/nerd-statistics/unlimited-bot.svg?branch=main)](https://travis-ci.com/nerd-statistics/unlimited-bot)
+
+Bot para discord com as features de **call everyone** e **giveaway**
 
 #### features
 - rolagem de dados
