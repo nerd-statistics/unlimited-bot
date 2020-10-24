@@ -1,0 +1,19 @@
+dist: xenial
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - "node_modules"
+
+services:
+  - docker
+
+jobs:
+  include:
+    - stage: test
+      name: "testing"
+      script: npm t
+    - stage: build
+      name: "building"
+      script: npm run build

@@ -1,8 +1,7 @@
 FROM node:alpine
 
+ADD . /app
 WORKDIR /app
-
-COPY . /app
 
 RUN npm install --no-optional && npm cache clean --force
 

@@ -6,10 +6,9 @@ xtest("should add any hour after current time", () => {
 })
 
 test("should build roll object correctly", () => {
-    const expected = buildRollObject(["+roll", "10s", "12", "fur", "neck"])
+    const expected = buildRollObject(["+roll", "12", "fur", "neck"])
     expect(expected).toStrictEqual({
         command: "+roll",
-        seconds: "10s",
         amount: "12",
         item: "Fur Neck"
     })
@@ -27,6 +26,6 @@ test("should be randomize between two integers", () => {
 })
 
 test("should be giveaway to guild", () => {
-    const giveawayWinner = giveaway("+roll 10s 12 demon axe")
+    const giveawayWinner = giveaway("+roll 12 demon axe")
     expect(giveawayWinner).toMatch(/Parabéns número \*\*\d+\*\*, você ganhou um \*\*Demon Axe\*\*/)
 })

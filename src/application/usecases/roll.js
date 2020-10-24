@@ -1,4 +1,5 @@
 const moment = require("moment")
+const { capitalize } = require("./utils")
 
 const scheduleAttack = (delayHour = 1) => {
     const schedule = moment().add(delayHour, "hour")
@@ -6,23 +7,20 @@ const scheduleAttack = (delayHour = 1) => {
 }
 
 const buildRollObject = contentList => {
-    const [ command, seconds, amount, ...item ] = contentList
-    return { command, seconds, amount, item: formatItemName(item) }
+    const [ command, amount, ...item ] = contentList
+    return { command, amount, item: formatItemName(item) }
 }
 
 const formatItemName = itemList => capitalize(itemList.join(" "))
 
-const capitalize = string => string
-    .split(" ")
-    .map(s => s[0].toUpperCase() + s.slice(1))
-    .join(" ")
-
-const giveaway = contentList => {
+const giveaway = content => {
+    const contentList = content.split(" ")
     const rollObject = buildRollObject(contentList)
     const winner = randomIntInclusive(1, rollObject.amount)
 
     return `Parabéns número **${winner}**, você ganhou um **${rollObject.item}**`
 }
+
 
 const randomIntInclusive = (min = 1, max) => {
     min = Math.ceil(min);

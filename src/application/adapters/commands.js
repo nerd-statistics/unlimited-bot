@@ -1,15 +1,13 @@
 const { alertBoss, giveaway } = require("../usecases")
 
 const commandsHandler = content => {
-    const contentList = content.split(" ")
-
     try {
         switch (contentList[0]) {
-            case "+boss":
-                let bossMessageReply = alertBoss(contentList)
+            case content.startsWith("+boss"):
+                let bossMessageReply = alertBoss(content)
                 return toEveryone(bossMessageReply)
-            case "+roll":
-                let rollMessageReply = giveaway(contentList)
+            case content.startsWith("+roll"):
+                let rollMessageReply = giveaway(content)
                 return rollMessageReply
             default:
                 return `Foi mal lek, os comandos disponíveis até o momento são: **+boss** e **+roll**`

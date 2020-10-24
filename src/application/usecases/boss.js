@@ -1,3 +1,5 @@
+const { capitalize } = require("./utils")
+
 const formatBossName = boss => {
     if(boss === "ank") return "Ankrahmur"
     if(boss === "groma") return "Gromarak"
@@ -15,12 +17,8 @@ const buildBossObject = contentList => {
     }
 }
 
-const capitalize = string => string
-    .split(" ")
-    .map(s => s[0].toUpperCase() + s.slice(1))
-    .join(" ")
-
-const alertBoss = contentList => {
+const alertBoss = content => {
+    const contentList = content.split(" ")
     const contentObj = buildBossObject(contentList)
     return `Pessoal, nasceu **${contentObj.boss}** no **${contentObj.server}**, vamos atacar mais tarde, fiquem ligados!`
 }
