@@ -10,9 +10,9 @@ client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on("message", msg => {
+client.on("message", msg => {        
     if (msg.content.startsWith("+")) {
-        const message = commandsHandler(msg.content)
+        const message = commandsHandler(msg.content, msg)
         msg.channel.send(message)
     }
 });

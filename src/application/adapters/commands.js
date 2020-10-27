@@ -1,6 +1,6 @@
-const { alertBoss, giveaway } = require("../usecases")
+const { alertBoss, giveaway, getDotaBuffBuildHero } = require("../usecases")
 
-const commandsHandler = content => {
+const commandsHandler = (content, sender) => {
     try {
         const command = content.split(" ")[0]
         switch (command) {
@@ -12,6 +12,8 @@ const commandsHandler = content => {
                 return rollmessagereply
             case "+oi":
                 return "Hello World!"
+            case "+dota":
+                return getDotaBuffBuildHero(content, sender)
             default:
                 return `Foi mal lek, os comandos disponíveis até o momento são: **+boss** e **+roll**`
         }
