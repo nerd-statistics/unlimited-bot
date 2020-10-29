@@ -1,0 +1,23 @@
+[
+    {
+        "buildName": "",
+        "description": "",
+        "weapons": [
+            {
+                "icon": "",
+                "rarity": "",
+                "name": "",
+                "stat": "",
+                "description": ""
+            }
+        ],
+        "artifacts": [
+            {
+                "icon": "",
+                "name": "",
+                "stat": "",
+                "bonus": []
+            }
+        ]
+    }
+]
