@@ -10,10 +10,10 @@ client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on("message", msg => {        
-    if (msg.content.startsWith("+")) {
-        const message = commandsHandler(msg.content, msg)
-        msg.channel.send(message)
+client.on("message", msgSent => {        
+    if (msgSent.content.startsWith("+")) {
+        const message = commandsHandler(msgSent)
+        msgSent.channel.send(message)
     }
 });
 
