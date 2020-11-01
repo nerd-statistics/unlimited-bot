@@ -1,5 +1,6 @@
 const { formatBossName, buildBossObject, alertBoss } = require("./boss")
 const { scheduleAttack, buildRollObject, giveaway } = require("./roll")
+const { getDotaBuffBuildHero } = require("./dota")
 
 module.exports = {
     formatBossName,
@@ -8,4 +9,5 @@ module.exports = {
     buildRollObject,
     alertBoss,
     giveaway,
+    getDotaBuffBuildHero
 }
