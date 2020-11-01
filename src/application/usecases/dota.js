@@ -1,6 +1,6 @@
 const heroes = require("./heroesList")
 
-const dotaBuffLink = process.env.DOTA_BUFF_LINK
+const dotaBuffLink = 'https://pt.dotabuff.com/heroes/'
 
 const getDotaBuffBuildHero = (heroCommand, sender) => {
     let heroName = heroCommand.toLowerCase().split(" ").slice(1).join(" ")
